@@ -19,19 +19,21 @@ export class Car {
     return `
     <div class="col-md-6 mb-3">
       <div class="position-relative shadow car-border">
-        <img
-          src="https://images.unsplash.com/photo-1725199583250-9f59567ba965?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1pYXRhfGVufDB8fDB8fHwy"
-          alt="1996 Mazda Miata" class="car-img">
+        <img src="${this.imgUrl}" alt="${this.year} ${this.make} ${this.model}" class="car-img">
         <span class="car-price bg-dark text-success fs-2 px-2 d-inline-block">
-          $2,000
+          $${this.price}
         </span>
         <div class="p-3">
           <div class="d-flex justify-content-between">
-            <h3>1996 Mazda Miata</h3>
+            <h3>${this.year} ${this.make} ${this.model}</h3>
             <span class="mdi mdi-engine-off fs-3" title="Salvaged Title"></span>
           </div>
-          <p>2000 miles</p>
-          <p>4-cylinder gas manual transmission</p>
+          <p>${this.mileage} miles</p>
+          <p>
+            ${this.cylinders}-cylinder
+            ${this.fuelType}
+            ${this.isManualTransmission ? 'manual transmission' : 'automatic transmission'}
+          </p>
           <p class="text-end mb-1">
             Listed on 12/12/2020
           </p>
