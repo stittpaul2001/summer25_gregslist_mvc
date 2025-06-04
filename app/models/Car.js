@@ -1,5 +1,8 @@
+import { generateId } from "../utils/GenerateId.js"
+
 export class Car {
   constructor(data) {
+    this.id = generateId()
     this.make = data.make
     this.model = data.model
     this.year = data.year
@@ -38,9 +41,14 @@ export class Car {
             ${this.fuelType}
             ${this.isManualTransmission ? 'manual transmission' : 'automatic transmission'}
           </p>
-          <p class="text-end mb-1">
-            Listed on ${this.listedAtDateString}
-          </p>
+          <div class="d-flex justify-content-between">
+            <button onclick="app.carsController.confirmDelete('${this.id}')" class="btn btn-outline-danger" type="button">
+              <span class="mdi mdi-delete"></span> Delete car
+            </button>
+            <p class="text-end mb-1">
+              Listed on ${this.listedAtDateString}
+            </p>
+          </div>
         </div>
       </div>
     </div>

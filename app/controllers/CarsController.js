@@ -44,4 +44,15 @@ export class CarsController {
 
     carsService.createCar(carData)
   }
+
+  confirmDelete(carId) {
+    const confirmed = window.confirm('Are you sure you want to permanently delete this car?')
+
+    // if (confirmed == false) { return }
+    if (!confirmed) { return }
+
+
+    console.log('deleting car with the id of ' + carId);
+    carsService.deleteCar(carId)
+  }
 }
