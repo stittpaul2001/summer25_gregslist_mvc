@@ -6,9 +6,9 @@ export class Car {
     this.make = data.make
     this.model = data.model
     this.year = data.year
-    this.price = data.price
+    this.price = parseInt(data.price)
     this.color = data.color
-    this.mileage = data.mileage
+    this.mileage = parseInt(data.mileage)
     this.imgUrl = data.imgUrl
     this.isManualTransmission = data.isManualTransmission
     this.cylinders = data.cylinders
