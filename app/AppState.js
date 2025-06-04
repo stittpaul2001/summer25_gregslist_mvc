@@ -17,7 +17,8 @@ class ObservableAppState extends EventEmitter {
         cylinders: 4,
         price: 2000,
         fuelType: 'gas',
-        listedAt: '12/12/2020'
+        listedAt: '12/12/2020',
+        titleStatus: 'clean'
       }
     ),
     new Car(
@@ -32,7 +33,8 @@ class ObservableAppState extends EventEmitter {
         cylinders: 4,
         price: 40000,
         fuelType: 'gas',
-        listedAt: '12/12/2010'
+        listedAt: '12/12/2010',
+        titleStatus: 'rebuilt'
       }
     ),
     new Car(
