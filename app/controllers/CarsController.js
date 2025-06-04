@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js";
+import { getFormData } from "../utils/FormHandler.js";
 
 export class CarsController {
   constructor() {
@@ -19,10 +20,22 @@ export class CarsController {
     // NOTE do not refresh the page during a form submission event!
     event.preventDefault()
     const formElem = event.target
-    console.log('submitting car!', formElem);
-    const carMake = formElem.make.value
-    const carModel = formElem.model.value
-    console.log(`car make is ${carMake} and model is ${carModel}`);
 
+    // NOTE how to manually pull values out of a form
+    // const carMake = formElem.make.value
+    // const carModel = formElem.model.value
+    // console.log(`car make is ${carMake} and model is ${carModel}`);
+
+    const carData = getFormData(formElem)
+    // if (carData.hasManualTransmission == 'on') {
+    //   carData.hasManualTransmission = true
+    // }
+    // else {
+    //   carData.hasManualTransmission = false
+    // }
+
+    carData.hasManualTransmission = carData.hasManualTransmission == 'on'
+
+    console.log('submitting car!', carData);
   }
 }
