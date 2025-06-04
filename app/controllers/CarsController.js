@@ -1,8 +1,11 @@
 import { AppState } from "../AppState.js";
+import { carsService } from "../services/CarsService.js";
 import { getFormData } from "../utils/FormHandler.js";
 
 export class CarsController {
   constructor() {
+    AppState.on('cars', this.drawCars)
+
     console.log('Cars controller is ready 🚓🚗🚙🏎️');
     this.drawCars()
   }
@@ -27,15 +30,18 @@ export class CarsController {
     // console.log(`car make is ${carMake} and model is ${carModel}`);
 
     const carData = getFormData(formElem)
-    // if (carData.hasManualTransmission == 'on') {
-    //   carData.hasManualTransmission = true
+    // if (carData.isManualTransmission == 'on') {
+    //   carData.isManualTransmission = true
     // }
     // else {
-    //   carData.hasManualTransmission = false
+    //   carData.isManualTransmission = false
     // }
 
-    carData.hasManualTransmission = carData.hasManualTransmission == 'on'
+    carData.isManualTransmission = carData.isManualTransmission == 'on'
 
+    // NOTE if you data from the form does not look correct, fix it!
     console.log('submitting car!', carData);
+
+    carsService.createCar(carData)
   }
 }

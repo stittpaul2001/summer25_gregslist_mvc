@@ -4,18 +4,16 @@ export class Car {
     this.model = data.model
     this.year = data.year
     this.price = data.price
-    // TODO do something cool with this
     this.color = data.color
     this.mileage = data.mileage
     this.imgUrl = data.imgUrl
     this.isManualTransmission = data.isManualTransmission
     this.cylinders = data.cylinders
     this.fuelType = data.fuelType
-    this.listedAt = new Date(data.listedAt)
-    // this.titleStatus = data.titleStatus == undefined ? 'clean' : data.titleStatus
-    // NOTE ?? nullish coalescing operator
-    // checks to see if the left hand side is undefined or null, and will return the right hand side if that is true
-    this.titleStatus = data.titleStatus ?? 'clean'
+    // NOTE if the date is undefined, construct a Date for today, otherwise construct a date using the listedAt
+    this.listedAt = data.listedAt == undefined ? new Date() : new Date(data.listedAt)
+
+    this.titleStatus = data.titleStatus || 'clean'
   }
 
   get listingHTMLTemplate() {
