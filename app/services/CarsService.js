@@ -25,13 +25,19 @@ class CarsService {
     this.saveCars()
   }
 
+  // NOTE save local storage for last
   saveCars() {
     saveState('cars', AppState.cars)
   }
 
   loadCars() {
     const carsFromLocalStorage = loadState('cars', [Car])
-    AppState.cars = carsFromLocalStorage
+    if (carsFromLocalStorage.length == 0) {
+      AppState.cars = AppState.cars
+    }
+    else {
+      AppState.cars = carsFromLocalStorage
+    }
   }
 }
 

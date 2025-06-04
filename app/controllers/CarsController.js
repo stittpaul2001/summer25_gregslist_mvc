@@ -7,7 +7,7 @@ export class CarsController {
     AppState.on('cars', this.drawCars)
 
     console.log('Cars controller is ready 🚓🚗🚙🏎️');
-    this.drawCars()
+    // this.drawCars()
     carsService.loadCars()
   }
 
@@ -59,5 +59,9 @@ export class CarsController {
 
     console.log('deleting car with the id of ' + carId);
     carsService.deleteCar(carId)
+  }
+
+  toggleCarSection() {
+    document.getElementById('cars-section').classList.toggle('d-none')
   }
 }

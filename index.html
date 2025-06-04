@@ -24,12 +24,18 @@
   </header>
 
   <main>
+
+    <!-- TODO put your house stuff up here! -->
     <section class="container">
       <div class="row">
         <div class="col-12">
           <h2>Cars</h2>
+          <button class="btn btn-outline-dark" onclick="app.carsController.toggleCarSection()">Toggle cars</button>
         </div>
       </div>
+
+    </section>
+    <section id="cars-section" class="container">
       <div class="row">
         <div class="col-md-6">
           <form onsubmit="app.carsController.submitCar()">
