@@ -30,6 +30,30 @@
           <h2>Cars</h2>
         </div>
       </div>
+      <div class="row">
+        <div class="col-12">
+          <form onsubmit="app.carsController.submitCar()">
+            <div class="mb-3">
+              <label for="car-make">Car Make</label>
+              <input id="car-make" type="text" placeholder="Car make...">
+            </div>
+            <div class="mb-3">
+              <label for="car-model">Car Model</label>
+              <input id="car-model" type="text" placeholder="Car model...">
+            </div>
+            <div>
+              <!-- NOTE resets the form -->
+              <button class="btn btn-outline-dark" type="reset">
+                Reset
+              </button>
+              <!-- NOTE submits the form -->
+              <button class="btn btn-success" type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
       <div id="car-listings" class="row">
         <!-- STUB car listing template -->
         <!-- <div class="col-md-6 mb-3">

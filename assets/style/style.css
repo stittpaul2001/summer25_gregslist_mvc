@@ -10,6 +10,10 @@ main {
 
 }
 
+label {
+  display: block;
+}
+
 #pop-toast-container {
   display: flex;
   flex-direction: column;
