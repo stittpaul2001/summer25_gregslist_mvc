@@ -18,6 +18,11 @@ export class CarsController {
   submitCar() {
     // NOTE do not refresh the page during a form submission event!
     event.preventDefault()
-    console.log('submitting car!');
+    const formElem = event.target
+    console.log('submitting car!', formElem);
+    const carMake = formElem.make.value
+    const carModel = formElem.model.value
+    console.log(`car make is ${carMake} and model is ${carModel}`);
+
   }
 }
