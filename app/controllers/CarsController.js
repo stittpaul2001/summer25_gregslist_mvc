@@ -8,6 +8,7 @@ export class CarsController {
 
     console.log('Cars controller is ready 🚓🚗🚙🏎️');
     this.drawCars()
+    carsService.loadCars()
   }
 
   drawCars() {
@@ -43,6 +44,10 @@ export class CarsController {
     console.log('submitting car!', carData);
 
     carsService.createCar(carData)
+
+    // NOTE @ts-ignore will get rid of red underlines
+    // @ts-ignore
+    formElem.reset()
   }
 
   confirmDelete(carId) {

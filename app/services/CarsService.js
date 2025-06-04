@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { Car } from "../models/Car.js";
+import { loadState, saveState } from "../utils/Store.js";
 
 class CarsService {
   deleteCar(carId) {
@@ -10,6 +11,8 @@ class CarsService {
     console.log('index to remove at is ' + carIndex);
     // NOTE always try to delete something in the middle of the array when testing!
     cars.splice(carIndex, 1) //💂!!!
+
+    this.saveCars()
   }
   createCar(carData) {
     console.log(carData);
@@ -19,6 +22,16 @@ class CarsService {
 
     console.log('added car!', AppState.cars);
 
+    this.saveCars()
+  }
+
+  saveCars() {
+    saveState('cars', AppState.cars)
+  }
+
+  loadCars() {
+    const carsFromLocalStorage = loadState('cars', [Car])
+    AppState.cars = carsFromLocalStorage
   }
 }
 
