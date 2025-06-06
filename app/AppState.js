@@ -13,7 +13,29 @@ class ObservableAppState extends EventEmitter {
         sqft: 1400,
         price: 375000,
         description: 'Newly renovated mid-century modern home',
-        imgUrl: 'https://rew-feed-images.global.ssl.fastly.net/imls/_cloud_media/property/residentialincome/98862307-1-835976ecc96808a93ea194115ae6c537-m.jpg'
+        imgUrl: 'house1.avif'
+      }
+    ),
+    new House(
+      {
+        year: '1951',
+        bedrooms: 12,
+        bathrooms: 10,
+        sqft: 2900,
+        price: 775000,
+        description: 'Newly mid-century home',
+        imgUrl: 'house2.avif'
+      }
+    ),
+    new House(
+      {
+        year: '2004',
+        bedrooms: 6,
+        bathrooms: 5.5,
+        sqft: 2200,
+        price: 675000,
+        description: 'Newly renovated mid-century home',
+        imgUrl: 'house3.avif'
       }
     ),
 
