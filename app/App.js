@@ -4,7 +4,7 @@ import { HousesController } from "./controllers/HousesController.js"
 class App {
   carsController = new CarsController()
 
-  housesController = new HousesController()
+  HousesController = new HousesController()
 }
 
 window['app'] = new App()

@@ -28,18 +28,17 @@ export class House {
         </div>
         <div class="d-flex justify-content-between fs-4 fw-bold">
             <p class="text-end">Total Bedrooms: ${this.bedrooms}</p>
-            <span class="text-start">Total Bathrooms: ${this.bedrooms}</span>
+            <span class="text-start">Total Bathrooms: ${this.bathrooms}</span>
         </div>
         <div class="d-flex justify-content-between fs-4 fw-bold">
               <div class="text-center">$${this.price}</div>
               <div class="text-end">
-                <button class="btn btn-danger btn-outline-dark fs-4 fw-bold">Delete</button>
+                <button onclick="app.HousesController.houseDeleted('${this.id}')" class="btn btn-danger btn-outline-dark fs-4 fw-bold" type="button">Delete</button>
               </div>
           </div>
         </div>
       </div>
-    </div>
-    `
+    </div>`
   }
 
 
